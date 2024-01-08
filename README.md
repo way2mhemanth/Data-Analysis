@@ -41,15 +41,24 @@ Stock["Shares"]=[1 if Stock.loc[i,'MA10']>Stock.loc[i,'MA50'] else 0 for i in St
 # Find the profit for each day based on today and tomarrow's value and then cumulate the gross profit.
 # After that find the profit percent over the time.
 Stock['Close1']=Stock['Close'].shift(-1)
+
 Stock['Profit']=[Stock.loc[i,'Close1']-Stock.loc[i,'Close'] if Stock.loc[i,'Shares']==1 else 0 for i in Stock.index]
+
 Stock["cum_profit"]=Stock["Profit"].cumsum()
+
 Stock["Profit_cent"]=Stock["cum_profit"]/Stock["Close"]*100
 
 # now lets show all of this in graph.
 Stock["Profit"].plot(y="daily",color="red")
+
 Stock["cum_profit"].plot(y="cum",color="Green")
+
 plt.show()
+
 Stock["Close"].plot()
+
 Stock["MA10"].plot(color="red")
+
 Stock["MA50"].plot(color="green")
+
 plt.show()
