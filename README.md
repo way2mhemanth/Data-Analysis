@@ -55,6 +55,8 @@ Stock["cum_profit"].plot(y="cum",color="Green")
 
 plt.show()
 
+! [daily profit and cummulative profit] (https://github.com/way2mhemanth/Stock_market_analysis/blob/main/ma_10_50.png)
+
 Stock["Close"].plot()
 
 Stock["MA10"].plot(color="red")
@@ -62,3 +64,4 @@ Stock["MA10"].plot(color="red")
 Stock["MA50"].plot(color="green")
 
 plt.show()
+
